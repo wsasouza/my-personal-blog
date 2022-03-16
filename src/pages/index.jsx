@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { PostCard, Categories, PostWidget } from '../components';
+import { PostCard, Categories, PostWidget, Header } from '../components';
 
 const posts = [
   { title: 'React Testing', excerpt: 'Learn React Testing' },
@@ -13,7 +13,7 @@ const Home = () => {
         <title>My personal Blog | wsasouza</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Header />
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 ">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((post) => <PostCard post={post} key={post.title}/>)}
