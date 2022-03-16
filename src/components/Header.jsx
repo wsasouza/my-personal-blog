@@ -11,7 +11,7 @@ const categories = [
 
 const Header = () => {
   return (
-    <div className="container sticky top-0 z-50 mx-auto px-10 mb-8">
+    <div className="container mx-auto px-10 mb-8">
       <div className="border-b w-full inline-block border-white py-8">
         <div className="md:float-left block">
           <Link href="/">
@@ -23,7 +23,7 @@ const Header = () => {
         <div className="hidden md:float-left md:contents">
           {categories.map((category) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
-              <span className="transition duration-500 md:float-right mt-2 align-middle text-gray-700 hover:text-blue-500 ml-4 font-semibold cursor-pointer">
+              <span className="transition duration-500 md:float-right mt-2 align-middle text-gray-700 hover:text-red-600 ml-4 font-semibold cursor-pointer">
                 {category.name}
               </span>
             </Link>
