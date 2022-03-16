@@ -6,13 +6,18 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
+    "graphql": "^15.6.1",
+    "graphql-request": "^3.5.0",
+    "html-react-parser": "^1.4.0",
+    "moment": "^2.29.1",
+    "next": "11.1.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-multi-carousel": "^2.6.5",
+    "sass": "^1.42.1",
+    "swr": "^1.0.1"
   },
-  "devDependencies": {
-    "@types/node": "17.0.4",
-    "@types/react": "17.0.38",
+  "devDependencies": {    
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
