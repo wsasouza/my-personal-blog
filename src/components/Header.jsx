@@ -1,15 +1,18 @@
-import { useContext } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-const categories = [
-  { name: 'Javascript', slug: 'javascript' },
-  { name: 'ReactJS', slug: 'reactjs' },
-  { name: 'React Native', slug: 'react-native' },
-  { name: 'Node.js', slug: 'node' },
-];
+import { getCategories } from '../services';
 
 
 const Header = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((newCategories) => {
+      setCategories(newCategories)
+    });
+  },[]);
+
   return (
     <div className="container mx-auto px-10 mb-8">
       <div className="border-b w-full inline-block border-white py-8">
