@@ -1,8 +1,5 @@
-
 const CommentsForm = () => {
-  return (
-    <div>CommentsForm</div>
-  );
-};
+  return <div>CommentsForm</div>
+}
 
-export default CommentsForm;
+export default CommentsForm
