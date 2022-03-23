@@ -57,9 +57,9 @@ const CommentsForm = ({ slug }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mb-8 rounded-lg bg-white p-8 pb-12 shadow-lg"
+      className="mb-8 rounded-lg bg-secondary p-8 pb-12 shadow-lg"
     >
-      <h3 className="mb-8 border-b pb-4 text-xl font-semibold">
+      <h3 className="mb-8 border-b pb-4 text-xl font-semibold text-primary">
         Deixe um comentário
       </h3>
       <div className="mb-4 grid grid-cols-1 gap-4">
@@ -68,7 +68,7 @@ const CommentsForm = ({ slug }) => {
           error={errors.comment}
           placeholder="Comentário"
           rows={2}
-          className="w-full rounded-lg bg-gray-100 p-4 text-gray-700 outline-none focus:ring-2 focus:ring-blue-400"
+          className="focus:ring- w-full rounded-lg bg-panel p-4 text-lightGray outline-none focus:ring-1 focus:ring-yellow-500 focus:ring-opacity-50"
         />
         {errors.comment && (
           <span className="text-red-600">{errors.comment.message}</span>
@@ -81,7 +81,7 @@ const CommentsForm = ({ slug }) => {
             type="text"
             error={errors.name}
             placeholder="Nome"
-            className="w-full rounded-lg bg-gray-100 p-2 text-gray-700 outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full rounded-lg bg-panel p-2 text-lightGray outline-none focus:ring-1 focus:ring-yellow-500 focus:ring-opacity-50"
           />
           {errors.name && (
             <span className="mt-2 text-red-600">{errors.name.message}</span>
@@ -93,7 +93,7 @@ const CommentsForm = ({ slug }) => {
             type="email"
             error={errors.email}
             placeholder="E-mail"
-            className="w-full rounded-lg bg-gray-100 p-2 text-gray-700 outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full rounded-lg bg-panel p-2 text-lightGray outline-none focus:ring-1 focus:ring-yellow-500 focus:ring-opacity-50"
           />
           {errors.email && (
             <span className="mt-2 text-red-600">{errors.email.message}</span>
@@ -105,7 +105,7 @@ const CommentsForm = ({ slug }) => {
         <input
           type="submit"
           value="Enviar"
-          className="ease inline-block cursor-pointer rounded-full bg-red-500 px-8 py-3 text-lg font-medium text-white transition duration-500 hover:bg-indigo-900"
+          className="ease inline-block cursor-pointer rounded-full bg-accentColor px-8 py-3 text-lg font-medium text-black transition duration-500 hover:bg-opacity-70 hover:text-white"
         />
 
         {submitted && (
