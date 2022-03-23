@@ -34,6 +34,7 @@ const PostDetails = ({ post }) => {
 
 export default PostDetails
 
+// Fetch data at build time
 export async function getStaticProps({ params }) {
   const data = await getPostDetails(params.slug)
 
@@ -42,6 +43,8 @@ export async function getStaticProps({ params }) {
   }
 }
 
+// Specify dynamic routes to pre-render pages based on data.
+// The HTML is generated at build time and will be reused on each request.
 export async function getStaticPaths() {
   const posts = await getPosts()
 
@@ -49,6 +52,6 @@ export async function getStaticPaths() {
     paths: posts.map(({ node: { slug } }) => ({
       params: { slug },
     })),
-    fallback: false,
+    fallback: true,
   }
 }
