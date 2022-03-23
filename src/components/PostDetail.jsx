@@ -70,7 +70,7 @@ const PostDetail = ({ post }) => {
           />
         </div>
         <div className="px-4 lg:px-0">
-          <div className="mb-8 flex w-full items-center">
+          <div className="mb-8 flex w-full flex-col items-start lg:flex-row lg:items-center">
             <div className="mb-4 mr-8 flex w-full items-center lg:mb-0 lg:w-auto">
               <img
                 src={post.author.photo.url}

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -26,10 +26,15 @@ const CommentsForm = ({ slug }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   })
+
+  useEffect(() => {
+    reset()
+  }, [slug])
 
   const onSubmit = ({ name, email, comment }) => {
     const post = {
@@ -45,6 +50,8 @@ const CommentsForm = ({ slug }) => {
         setSubmitted(false)
       }, 3000)
     })
+
+    reset()
   }
 
   return (
@@ -61,7 +68,7 @@ const CommentsForm = ({ slug }) => {
           error={errors.comment}
           placeholder="Comentário"
           rows={2}
-          className="w-full rounded-lg bg-gray-100 p-4 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+          className="w-full rounded-lg bg-gray-100 p-4 text-gray-700 outline-none focus:ring-2 focus:ring-blue-400"
         />
         {errors.comment && (
           <span className="text-red-600">{errors.comment.message}</span>
@@ -74,7 +81,7 @@ const CommentsForm = ({ slug }) => {
             type="text"
             error={errors.name}
             placeholder="Nome"
-            className="w-full rounded-lg bg-gray-100 p-2 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+            className="w-full rounded-lg bg-gray-100 p-2 text-gray-700 outline-none focus:ring-2 focus:ring-blue-400"
           />
           {errors.name && (
             <span className="mt-2 text-red-600">{errors.name.message}</span>
@@ -86,7 +93,7 @@ const CommentsForm = ({ slug }) => {
             type="email"
             error={errors.email}
             placeholder="E-mail"
-            className="w-full rounded-lg bg-gray-100 p-2 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+            className="w-full rounded-lg bg-gray-100 p-2 text-gray-700 outline-none focus:ring-2 focus:ring-blue-400"
           />
           {errors.email && (
             <span className="mt-2 text-red-600">{errors.email.message}</span>
