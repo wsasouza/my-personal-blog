@@ -56,13 +56,16 @@ const PostDetail = ({ post }) => {
           </p>
         )
 
-      case 'quote':
+      case 'code-block':
         return (
-          <q key={index} className="mb-4 text-xl font-semibold text-lightGray">
+          <code_block
+            key={index}
+            className="m-4 w-full rounded-lg bg-mainColor p-8 text-xl text-green-500"
+          >
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
-          </q>
+          </code_block>
         )
 
       case 'image':
@@ -73,6 +76,7 @@ const PostDetail = ({ post }) => {
             height={obj.height}
             width={obj.width}
             src={obj.src}
+            className="w-full object-cover"
           />
         )
       default:
