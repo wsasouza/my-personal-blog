@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { getCategories } from '../services'
+import Logo from '../../public/go-tips_w.svg'
 
 const Header = () => {
   const [categories, setCategories] = useState([])
@@ -18,7 +19,7 @@ const Header = () => {
         <div className="block md:float-left">
           <Link href="/">
             <span className="cursor-pointer text-4xl font-bold text-primary">
-              <span className="text-accentColor">WSA</span>SOUZA
+              <Logo />
             </span>
           </Link>
         </div>

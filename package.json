@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
+    "@svgr/webpack": "^6.2.1",
     "graphql": "^15.6.1",
     "graphql-request": "^3.5.0",
     "html-react-parser": "^1.4.0",
